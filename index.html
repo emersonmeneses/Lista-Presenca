@@ -1,127 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sistema de Presença</title>
-<link rel="stylesheet" href="style.css">
+<title>Login</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-<!-- ================= LOGIN ================= -->
-<div id="loginTela" class="login-container">
+<body class="login-body">
 
-    <div class="login-box">
+<div class="login-card">
 
-        <div class="login-left">
-            <img src="logo.png" class="logo">
-            <h2>Acesso do Professor</h2>
-        </div>
+<h2>Login</h2>
 
-        <div class="login-right">
-            <input type="email" id="email" placeholder="E-mail">
-
-            <div class="password-box">
-                <input type="password" id="senha" placeholder="Senha">
-                <span onclick="toggleSenha()">👁</span>
-            </div>
-
-            <div class="login-options">
-                <label>
-                    <input type="checkbox" id="lembrar"> Salvar login
-                </label>
-                <a href="#" onclick="redefinirSenha()">Esqueci a senha</a>
-            </div>
-
-            <button onclick="login()">Entrar</button>
-        </div>
-
-    </div>
+<div class="input-group">
+    <input type="text" id="username" placeholder="Username">
 </div>
 
-<!-- ================= DASHBOARD ================= -->
-<div id="dashboardTela" style="display:none;">
-
-<div class="container">
-
-    <aside class="sidebar">
-        <h2>PresençaApp</h2>
-        <ul>
-            <li onclick="mostrarSecao('presenca')">📋 Presença</li>
-            <li onclick="mostrarSecao('relatorios')">📊 Relatórios</li>
-            <li onclick="mostrarSecao('perfil')">👩‍🏫 Perfil</li>
-            <li onclick="logout()">🚪 Sair</li>
-        </ul>
-    </aside>
-
-    <main class="content">
-
-        <!-- PRESENÇA -->
-        <section id="presenca" class="secao ativa">
-            <h2>Controle de Presença</h2>
-
-            <div class="turma-info">
-                Turma:
-                <select>
-                    <option>1º Ano A</option>
-                    <option>2º Ano B</option>
-                </select>
-                <span>Total alunos: <b>25</b></span>
-            </div>
-
-            <div class="aluno-card">
-                <div class="foto-aluno"></div>
-                <div>
-                    <h3>Nome do Aluno</h3>
-
-                    <div class="acoes">
-                        <button class="btn-presenca">Presença</button>
-                        <button class="btn-ausente">Ausência</button>
-                        <button class="btn-obs">Observação</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- RELATÓRIOS -->
-        <section id="relatorios" class="secao">
-            <h2>Relatórios</h2>
-
-            <div class="relatorio-box">
-                <button>Relatório Individual</button>
-                <button>Relatório por Dia</button>
-                <button>Relatório Mensal</button>
-                <button>Relatório Anual</button>
-                <button>Relatório Geral</button>
-            </div>
-
-            <div class="exportar">
-                <button>📥 Baixar PDF</button>
-                <button>📧 Enviar Email</button>
-                <button>📲 Enviar WhatsApp</button>
-            </div>
-        </section>
-
-        <!-- PERFIL -->
-        <section id="perfil" class="secao">
-            <h2>Perfil da Professora</h2>
-
-            <div class="perfil-box">
-                <div class="foto-prof"></div>
-
-                <div>
-                    <p><b>Nome:</b> Professora Maria</p>
-                    <p><b>Turma Atual:</b> 1º Ano A</p>
-                    <p><b>Total Alunos:</b> 25</p>
-                </div>
-            </div>
-        </section>
-
-    </main>
+<div class="input-group">
+    <input type="password" id="password" placeholder="Password">
 </div>
+
+<div class="options">
+    <label>
+        <input type="checkbox"> remember me
+    </label>
+    <a href="#">forgot password</a>
+</div>
+
+<button onclick="login()" class="btn-login">Login</button>
+
+<p class="create-account">Create Account</p>
 
 </div>
 
-<script src="script.js"></script>
+<script type="module" src="js/script.js"></script>
 </body>
 </html>
