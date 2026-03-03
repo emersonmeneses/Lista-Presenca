@@ -1,4 +1,5 @@
 import { gerarRelatorioAPI, listarAlunos } from "./api.js";
+import { auth } from "./firebase-config.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
