@@ -1,14 +1,15 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getStorage } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-const firebaseConfig = {
-apiKey: "SUA_KEY",
-authDomain: "SEU_DOMINIO",
-projectId: "SEU_ID",
-storageBucket: "SEU_BUCKET",
-messagingSenderId: "X",
-appId: "X"
-};
+ const firebaseConfig = {
+    apiKey: "AIzaSyCRwjKJyWu54ip_lnFK_2cIot0Zpnairnk",
+    authDomain: "lista-presenca-5f611.firebaseapp.com",
+    projectId: "lista-presenca-5f611",
+    storageBucket: "lista-presenca-5f611.firebasestorage.app",
+    messagingSenderId: "502952841131",
+    appId: "1:502952841131:web:bfc803e771ecc2bcd94cee",
+    measurementId: "G-JD3T2FHKBT"
+  };
 
 const app = initializeApp(firebaseConfig);
-export const storage = getStorage(app);
+export const auth = getAuth(app);
