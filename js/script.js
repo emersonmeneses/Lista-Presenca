@@ -1,39 +1,45 @@
-import { gerarRelatorioAPI, listarAlunos } from "./api.js";
 import { auth } from "./firebase-config.js";
+import { signInWithEmailAndPassword, sendPasswordResetEmail } 
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-if(document.getElementById("selectAluno")){
-const alunos = await listarAlunos();
-const select = document.getElementById("selectAluno");
+  const btnLogin = document.querySelector("button");
+  const emailInput = document.querySelectorAll("input")[0];
+  const senhaInput = document.querySelectorAll("input")[1];
+  const linkEsqueci = document.querySelector("a");
 
-alunos.forEach(a=>{
-select.innerHTML += `<option value="${a.id}">${a.nome}</option>`;
+  // LOGIN
+  btnLogin.addEventListener("click", async () => {
+    const email = emailInput.value;
+    const senha = senhaInput.value;
+
+    try {
+      await signInWithEmailAndPassword(auth, email, senha);
+      alert("Login realizado com sucesso!");
+      window.location.href = "home.html"; // próxima tela
+    } catch (error) {
+      alert("Erro: " + error.message);
+    }
+  });
+
+  // ESQUECI SENHA
+  linkEsqueci.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const email = emailInput.value;
+
+    if (!email) {
+      alert("Digite seu email primeiro.");
+      return;
+    }
+
+    try {
+      await sendPasswordResetEmail(auth, email);
+      alert("Email de recuperação enviado!");
+    } catch (error) {
+      alert("Erro: " + error.message);
+    }
+  });
+
 });
-}
-
-});
-
-window.gerarRelatorio = async function(){
-
-const dataInicio = document.getElementById("dataInicio").value;
-const dataFim = document.getElementById("dataFim").value;
-const alunoId = document.getElementById("selectAluno").value;
-
-const dados = await gerarRelatorioAPI({dataInicio,dataFim,alunoId});
-
-const container = document.getElementById("resultadoRelatorio");
-container.innerHTML="";
-
-dados.forEach(item=>{
-container.innerHTML+=`
-<div class="card-relatorio">
-<h3>${item.nomeAluno}</h3>
-<p>Presenças: ${item.presencas}</p>
-<p>Ausências: ${item.ausencias}</p>
-<p>Total: ${item.total}</p>
-</div>
-`;
-});
-
-}
