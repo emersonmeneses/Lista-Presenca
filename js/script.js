@@ -2,6 +2,7 @@ import { auth } from "./firebase-config.js";
 import { signInWithEmailAndPassword, sendPasswordResetEmail } 
 from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
+
 document.addEventListener("DOMContentLoaded", () => {
 
   const btnLogin = document.querySelector("button");
