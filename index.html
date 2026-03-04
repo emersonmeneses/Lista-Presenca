@@ -5,6 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login</title>
 <link rel="stylesheet" href="css/style.css">
+
+<style>
+.spinner {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 3px solid white;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+</style>
+
 </head>
 
 <body class="login-body">
@@ -14,25 +32,24 @@
 <h2>Login</h2>
 
 <div class="input-group">
-    <input type="password" placeholder="Senha">
+    <input type="email" id="email" placeholder="E-mail">
 </div>
 
 <div class="input-group">
-    <input type="password" id="password" placeholder="Senha">
+    <input type="password" id="senha" placeholder="Senha">
 </div>
 
 <div class="options">
     <label>
         <input type="checkbox"> lembrar de mim
     </label>
-    <<a href="#">Esqueci minha senha</a>
+    <a href="#" id="esqueciSenha">Esqueci minha senha</a>
 </div>
 
-<button onclick="login()" class="btn-login" id="btnLogin">
+<button class="btn-login" id="btnLogin">
   <span class="btn-text">Login</span>
   <span class="spinner"></span>
 </button>
-
 
 </div>
 
