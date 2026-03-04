@@ -10,34 +10,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   btnLogin.addEventListener("click", async () => {
 
-    const email = emailInput.value;
-    const senha = senhaInput.value;
+    const loginBtn = document.getElementById("loginBtn");
 
-    if (!email || !senha) {
-      alert("Preencha email e senha.");
-      return;
-    }
+loginBtn.addEventListener("click", async (e) => {
+  e.preventDefault();
 
-    // 🔵 MOSTRAR CARREGANDO
-    btnLogin.disabled = true;
-    btnLogin.querySelector(".btn-text").textContent = "Entrando...";
-    btnLogin.querySelector(".spinner").style.display = "inline-block";
+  const email = document.getElementById("email").value;
+  const senha = document.getElementById("senha").value;
 
-    try {
-      await signInWithEmailAndPassword(auth, email, senha);
+  loginBtn.innerText = "Carregando...";
+  loginBtn.disabled = true;
 
-      window.location.href = "painel.html";
+  try {
+    await signInWithEmailAndPassword(auth, email, senha);
+    window.location.href = "painel.html";
+  } catch (error) {
+    alert("Erro ao fazer login: " + error.message);
+  }
 
-    } catch (error) {
-
-      alert("Erro: " + error.message);
-
-      // 🔴 VOLTA AO NORMAL SE DER ERRO
-      btnLogin.disabled = false;
-      btnLogin.querySelector(".btn-text").textContent = "Login";
-      btnLogin.querySelector(".spinner").style.display = "none";
-    }
-
-  });
-
+  loginBtn.innerText = "Entrar";
+  loginBtn.disabled = false;
 });
