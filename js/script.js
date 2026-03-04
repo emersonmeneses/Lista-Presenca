@@ -27,9 +27,3 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
-
-    loginBtn.innerText = "Entrar";
-    loginBtn.disabled = false;
-  });
-
-});
