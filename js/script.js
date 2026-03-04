@@ -4,30 +4,32 @@ from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const btnLogin = document.getElementById("btnLogin");
-  const emailInput = document.getElementById("email");
-  const senhaInput = document.getElementById("senha");
+  const loginBtn = document.getElementById("loginBtn");
 
-  btnLogin.addEventListener("click", async () => {
+  loginBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
 
-    const loginBtn = document.getElementById("loginBtn");
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
 
-loginBtn.addEventListener("click", async (e) => {
-  e.preventDefault();
+    loginBtn.innerText = "Carregando...";
+    loginBtn.disabled = true;
 
-  const email = document.getElementById("email").value;
-  const senha = document.getElementById("senha").value;
+    try {
+      await signInWithEmailAndPassword(auth, email, senha);
+      window.location.href = "painel.html";
+    } catch (error) {
+      alert("Erro ao fazer login: " + error.message);
+    }
 
-  loginBtn.innerText = "Carregando...";
-  loginBtn.disabled = true;
+    loginBtn.innerText = "Entrar";
+    loginBtn.disabled = false;
+  });
 
-  try {
-    await signInWithEmailAndPassword(auth, email, senha);
-    window.location.href = "painel.html";
-  } catch (error) {
-    alert("Erro ao fazer login: " + error.message);
-  }
+});
 
-  loginBtn.innerText = "Entrar";
-  loginBtn.disabled = false;
+    loginBtn.innerText = "Entrar";
+    loginBtn.disabled = false;
+  });
+
 });
