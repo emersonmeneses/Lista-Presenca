@@ -237,6 +237,19 @@ margin-bottom:15px;
   animation: spin 0.8s linear infinite;
   margin: auto;
 }
+.login-body {
+  margin: 0;
+  height: 100vh;
+
+  background-image: url("../img/fundo.jpg"); /* caminho da imagem */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @keyframes spin {
   100% { transform: rotate(360deg); }
