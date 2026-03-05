@@ -10,7 +10,6 @@
 
 <link rel="stylesheet" href="css/style.css">
 
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
@@ -41,25 +40,15 @@ placeholder="Senha"
 required
 >
 
-<i
-class="fa-solid fa-eye"
-id="toggleSenha"
-onclick="toggleSenha()"
-></i>
+<i class="fa-solid fa-eye olho" onclick="toggleSenha()"></i>
 
 </div>
 
-<!-- BOTÃO -->
 <button onclick="login()" id="btnLogin">
 Entrar
 </button>
 
-<!-- ESQUECI SENHA -->
-<a
-href="#"
-onclick="resetSenha()"
-class="esqueci"
->
+<a href="#" onclick="resetSenha()" class="esqueci">
 Esqueci minha senha
 </a>
 
@@ -69,7 +58,6 @@ Esqueci minha senha
 
 </div>
 
-<!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
