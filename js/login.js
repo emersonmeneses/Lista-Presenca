@@ -1,95 +1,91 @@
-import { auth } from "./firebase-config.js";
-import {
-  signInWithEmailAndPassword,
-  sendPasswordResetEmail
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+// função login
 
-const emailInput = document.getElementById("email");
-const senhaInput = document.getElementById("senha");
-const btnLogin = document.getElementById("btnLogin");
-const mensagem = document.getElementById("mensagem");
-const toggleSenha = document.getElementById("toggleSenha");
-const esqueciSenha = document.getElementById("esqueciSenha");
+function login(){
 
+const email = document.getElementById("email").value
 
-// 👁 Mostrar / Ocultar senha
-toggleSenha.addEventListener("click", () => {
-  if (senhaInput.type === "password") {
-    senhaInput.type = "text";
-    toggleSenha.textContent = "🙈";
-  } else {
-    senhaInput.type = "password";
-    toggleSenha.textContent = "👁";
-  }
-});
+const senha = document.getElementById("senha").value
 
+const erro = document.getElementById("erroLogin")
 
-// 🔐 Login
-btnLogin.addEventListener("click", async () => {
+const btn = document.getElementById("btnLogin")
 
-  const email = emailInput.value;
-  const senha = senhaInput.value;
+// botão loading
 
-  if (!email || !senha) {
-    mensagem.textContent = "Preencha email e senha.";
-    return;
-  }
+btn.innerText = "Entrando..."
 
-  // Ativar carregamento
-  btnLogin.disabled = true;
-  btnLogin.textContent = "Carregando...";
+firebase.auth()
 
-  try {
-    await signInWithEmailAndPassword(auth, email, senha);
+.signInWithEmailAndPassword(email, senha)
 
-    mensagem.style.color = "green";
-    mensagem.textContent = "Login realizado com sucesso!";
+.then(()=>{
 
-    // Redirecionar (se quiser)
-    setTimeout(() => {
-      window.location.href = "dashboard.html";
-    }, 1500);
+// login sucesso
 
-  } catch (error) {
+window.location.href = "dashboard.html"
 
-    mensagem.style.color = "red";
+})
 
-    if (error.code === "auth/user-not-found") {
-      mensagem.textContent = "Usuário não encontrado.";
-    } else if (error.code === "auth/wrong-password") {
-      mensagem.textContent = "Senha incorreta.";
-    } else if (error.code === "auth/invalid-email") {
-      mensagem.textContent = "Email inválido.";
-    } else {
-      mensagem.textContent = "Erro ao fazer login.";
-    }
+.catch(()=>{
 
-  } finally {
-    btnLogin.disabled = false;
-    btnLogin.textContent = "Acessar";
-  }
+// erro login
 
-});
+erro.innerText = "Email ou senha incorretos"
+
+btn.innerText = "Entrar"
+
+})
+
+}
 
 
-// 🔄 Esqueci senha
-esqueciSenha.addEventListener("click", async (e) => {
-  e.preventDefault();
+// mostrar senha
 
-  const email = emailInput.value;
+function toggleSenha(){
 
-  if (!email) {
-    mensagem.style.color = "red";
-    mensagem.textContent = "Digite seu email para redefinir a senha.";
-    return;
-  }
+const senha = document.getElementById("senha")
 
-  try {
-    await sendPasswordResetEmail(auth, email);
-    mensagem.style.color = "green";
-    mensagem.textContent = "Email de redefinição enviado!";
-  } catch (error) {
-    mensagem.style.color = "red";
-    mensagem.textContent = "Erro ao enviar email.";
-  }
-});
+if(senha.type === "password"){
+
+senha.type = "text"
+
+}else{
+
+senha.type = "password"
+
+}
+
+}
+
+
+// recuperar senha
+
+function resetSenha(){
+
+const email = document.getElementById("email").value
+
+if(email === ""){
+
+alert("Digite seu email primeiro")
+
+return
+
+}
+
+firebase.auth()
+
+.sendPasswordResetEmail(email)
+
+.then(()=>{
+
+alert("Email de recuperação enviado")
+
+})
+
+.catch(()=>{
+
+alert("Erro ao enviar email")
+
+})
+
+}
