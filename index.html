@@ -1,45 +1,85 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Login</title>
+
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 
-<body class="login-body">
+<body>
 
-<div class="login-card">
-  <h2>Login</h2>
+<!-- container principal do login -->
+<div class="login-container">
 
-  <div class="input-group">
-      <input type="email" id="email" placeholder="E-mail">
-  </div>
+<h2>Login</h2>
 
-  <div class="input-group password-group">
-      <input type="password" id="senha" placeholder="Senha">
-      <span id="toggleSenha" class="eye">👁</span>
-  </div>
+<!-- campo email -->
+<input
+type="email"
+id="email"
+placeholder="Seu e-mail"
+required
+>
 
-  <div class="options">
-      <label>
-          <input type="checkbox"> lembrar de mim
-      </label>
-      <a href="#" id="resetSenha">Esqueci minha senha</a>
-  </div>
+<!-- campo senha com ícone -->
+<div class="senha-box">
 
-  <button class="btn-login" id="loginBtn">
-    <span id="btnText">Login</span>
-    <span id="spinner" class="spinner" style="display:none;"></span>
-  </button>
+<input
+type="password"
+id="senha"
+placeholder="Senha"
+required
+>
+
+<span
+class="ver-senha"
+onclick="toggleSenha()"
+>👁</span>
 
 </div>
 
-<!-- 🔥 IMPORTANTE: Firebase primeiro -->
-<script type="module" src="js/firebase.js"></script>
+<!-- botão login -->
+<button onclick="login()" id="btnLogin">
 
-<!-- 🔥 Depois o login -->
-<script type="module" src="js/login.js"></script>
+Entrar
+
+</button>
+
+<!-- esqueceu senha -->
+<a
+href="#"
+onclick="resetSenha()"
+class="esqueci"
+>
+
+Esqueci minha senha
+
+</a>
+
+<hr>
+
+<!-- mensagem erro -->
+<p id="erroLogin"></p>
+
+</div>
+
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+<!-- configuração firebase -->
+<script src="js/firebase-config.js"></script>
+
+<!-- lógica login -->
+<script src="js/login.js"></script>
 
 </body>
+
 </html>
