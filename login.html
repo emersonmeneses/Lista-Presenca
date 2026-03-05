@@ -1,32 +1,91 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Login</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+// função login
 
-<div class="login-container">
-  <h2>Entrar</h2>
+function login(){
 
-  <input type="email" id="email" placeholder="Email">
+const email = document.getElementById("email").value
 
-  <div class="password-group">
-    <input type="password" id="senha" placeholder="Senha">
-    <button type="button" id="toggleSenha" class="eye-btn">👁</button>
-  </div>
+const senha = document.getElementById("senha").value
 
-  <button id="btnLogin">Acessar</button>
+const erro = document.getElementById("erroLogin")
 
-  <p>
-    <a href="#" id="esqueciSenha">Esqueci minha senha</a>
-  </p>
+const btn = document.getElementById("btnLogin")
 
-  <p id="mensagem"></p>
-</div>
+// botão loading
 
-<script type="module" src="js/login.js"></script>
+btn.innerText = "Entrando..."
 
-</body>
-</html>git 
+firebase.auth()
+
+.signInWithEmailAndPassword(email, senha)
+
+.then(()=>{
+
+// login sucesso
+
+window.location.href = "dashboard.html"
+
+})
+
+.catch(()=>{
+
+// erro login
+
+erro.innerText = "Email ou senha incorretos"
+
+btn.innerText = "Entrar"
+
+})
+
+}
+
+
+// mostrar senha
+
+function toggleSenha(){
+
+const senha = document.getElementById("senha")
+
+if(senha.type === "password"){
+
+senha.type = "text"
+
+}else{
+
+senha.type = "password"
+
+}
+
+}
+
+
+// recuperar senha
+
+function resetSenha(){
+
+const email = document.getElementById("email").value
+
+if(email === ""){
+
+alert("Digite seu email primeiro")
+
+return
+
+}
+
+firebase.auth()
+
+.sendPasswordResetEmail(email)
+
+.then(()=>{
+
+alert("Email de recuperação enviado")
+
+})
+
+.catch(()=>{
+
+alert("Erro ao enviar email")
+
+})
+
+}
