@@ -306,18 +306,26 @@ font-size:14px;
 }
 
 
-/* AJUSTE PARA CELULAR */
-
 @media (max-width: 600px){
 
 .login-container{
 width:90%;
 padding:25px;
+margin:auto;
 }
 
-body{
-align-items:flex-start;
-padding-top:60px;
+.login-container h2{
+font-size:22px;
+}
+
+.login-container input{
+height:40px;
+font-size:13px;
+}
+
+.login-container button{
+height:40px;
+font-size:14px;
 }
 
 }
