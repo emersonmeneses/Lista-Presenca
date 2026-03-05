@@ -65,15 +65,14 @@ margin-bottom:15px;
 
 /* ===== CAIXA SENHA ===== */
 
-.password-box{
+.senha-box{
 position:relative;
 width:100%;
 }
 
-
 /* ===== ICONE OLHO ===== */
 
-.password-box i{
+.senha-box i{
 
 position:absolute;
 
