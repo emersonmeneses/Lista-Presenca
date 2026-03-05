@@ -133,3 +133,11 @@ margin-top:10px;
 font-size:14px;
 
 }
+.login-container input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border-radius:6px;
+border:1px solid #ccc;
+box-sizing:border-box;
+}
