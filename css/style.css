@@ -1,246 +1,48 @@
-body{
+/* ===== RESET ===== */
 
+body{
 margin:0;
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
 
 font-family:Arial, Helvetica, sans-serif;
 
 background-image:url("../fundo site.png");
-
 background-size:cover;
-
 background-position:center;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-height:100vh;
-
-}
-
-/* caixa login */
-
-/* ===== CENTRALIZAR LOGIN ===== */
-
-body{
-    margin:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-family:Arial, Helvetica, sans-serif;
-
-    background-image:url("../fundo site.png");
-    background-size:cover;
-    background-position:center;
 }
 
 
-/* ===== CAIXA DO LOGIN ===== */
+/* ===== CAIXA LOGIN ===== */
 
 .login-container{
 
-    width:380px;
-    padding:40px;
+width:380px;
+padding:40px;
 
-    background:rgba(255,255,255,0.15);
-    backdrop-filter: blur(10px);
+background:rgba(255,255,255,0.15);
+backdrop-filter: blur(10px);
 
-    border-radius:12px;
+border-radius:12px;
 
-    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
 
-    text-align:center;
+text-align:center;
+
 }
 
 
 /* ===== TITULO ===== */
 
 .login-container h2{
-    margin-bottom:25px;
+margin-bottom:25px;
 }
 
 
 /* ===== INPUTS ===== */
-
-.login-container input{
-
-    width:100%;
-    padding:12px;
-
-    margin-bottom:15px;
-
-    border-radius:6px;
-    border:1px solid #ccc;
-
-    font-size:14px;
-}
-
-
-/* ===== BOTÃO ===== */
-
-.login-container button{
-
-    width:100%;
-    padding:12px;
-
-    border:none;
-    border-radius:6px;
-
-    background:#3b82f6;
-    color:white;
-
-    font-size:15px;
-
-    cursor:pointer;
-}
-
-.login-container button:hover{
-    background:#2563eb;
-}
-
-
-/* ===== LINK ===== */
-
-.login-container a{
-    display:block;
-    margin-top:12px;
-    font-size:13px;
-}
-
-/* campos */
-
-input{
-
-width:100%;
-
-padding:12px;
-
-margin-top:15px;
-
-border-radius:6px;
-
-border:1px solid #ccc;
-
-font-size:14px;
-
-}
-
-/* caixa senha */
-
-.senha-box{
-
-position:relative;
-
-}
-
-/* botão olho */
-
-.ver-senha{
-
-position:absolute;
-
-right:10px;
-
-top:18px;
-
-cursor:pointer;
-
-}
-
-/* botão login */
-
-button{
-
-width:100%;
-
-padding:12px;
-
-margin-top:20px;
-
-background:#2c7be5;
-
-color:white;
-
-border:none;
-
-border-radius:6px;
-
-font-size:16px;
-
-cursor:pointer;
-
-}
-
-button:hover{
-
-background:#1a68d1;
-
-}
-
-/* esqueceu senha */
-
-.esqueci{
-
-display:block;
-
-margin-top:15px;
-
-color:#2c7be5;
-
-text-decoration:none;
-
-}
-
-/* erro */
-
-#erroLogin{
-
-color:red;
-
-margin-top:10px;
-
-font-size:14px;
-
-}
-.login-body{
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-background-size:cover;
-background-position:center;
-}
-/* caixa da senha */
-
-.password-box{
-
-position:relative;
-width:100%;
-
-}
-
-
-/* icone olho */
-
-.password-box i{
-
-position:absolute;
-
-right:12px;
-top:50%;
-
-transform:translateY(-50%);
-
-cursor:pointer;
-color:#555;
-
-}
-
-
-/* inputs */
 
 .login-container input{
 
@@ -260,3 +62,89 @@ margin-bottom:15px;
 
 }
 
+
+/* ===== CAIXA SENHA ===== */
+
+.password-box{
+position:relative;
+width:100%;
+}
+
+
+/* ===== ICONE OLHO ===== */
+
+.password-box i{
+
+position:absolute;
+
+right:12px;
+top:50%;
+
+transform:translateY(-50%);
+
+cursor:pointer;
+
+color:#555;
+font-size:16px;
+
+}
+
+
+/* ===== BOTÃO LOGIN ===== */
+
+.login-container button{
+
+width:100%;
+height:45px;
+
+border:none;
+border-radius:6px;
+
+background:#3b82f6;
+color:white;
+
+font-size:15px;
+
+cursor:pointer;
+
+transition:0.2s;
+
+}
+
+.login-container button:hover{
+background:#2563eb;
+}
+
+
+/* ===== LINK ESQUECI SENHA ===== */
+
+.login-container a{
+
+display:block;
+
+margin-top:12px;
+
+font-size:13px;
+
+color:#3b82f6;
+
+text-decoration:none;
+
+}
+
+.login-container a:hover{
+text-decoration:underline;
+}
+
+
+/* ===== ERRO LOGIN ===== */
+
+#erroLogin{
+
+color:red;
+
+margin-top:10px;
+
+font-size:14px;
+
+}
