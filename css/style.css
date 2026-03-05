@@ -1,282 +1,135 @@
 body{
+
 margin:0;
-font-family: 'Segoe UI', sans-serif;
-}
 
-/* LOGIN */
+font-family:Arial, Helvetica, sans-serif;
 
-.login-body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:url('../assets/bg-login.jpg') no-repeat center;
+background-image:url("../img/fundo.jpg");
+
 background-size:cover;
-}
 
-.login-card{
-background:#fff;
-padding:40px;
-width:350px;
-border-radius:10px;
-box-shadow:0 15px 40px rgba(0,0,0,0.3);
-text-align:center;
-}
+background-position:center;
 
-.input-group input{
-width:100%;
-padding:12px;
-margin:10px 0;
-border-radius:20px;
-border:none;
-background:#f4a5b5;
-color:#fff;
-}
-
-.options{
 display:flex;
-justify-content:space-between;
-font-size:12px;
-}
 
-.btn-login{
-width:100%;
-padding:12px;
-margin-top:15px;
-background:#6b21a8;
-color:#fff;
-border:none;
-border-radius:20px;
-cursor:pointer;
-}
-
-/* DASHBOARD */
-
-.dashboard-body{
-background:#f2f2f2;
-}
-
-.top-bar{
-height:80px;
-background:linear-gradient(90deg,#6b21a8,#9333ea);
-}
-
-.professor-section{
-text-align:center;
-margin-top:-50px;
-}
-
-.prof-avatar{
-width:120px;
-height:120px;
-border-radius:50%;
-border:5px solid #fff;
-}
-
-.lista-container{
-width:80%;
-margin:20px auto;
-background:#fff;
-padding:20px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
-
-.lista-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.badge-presenca{
-background:#22c55e;
-color:#fff;
-padding:5px 15px;
-border-radius:20px;
-}
-
-.badge-ausencia{
-background:#ef4444;
-color:#fff;
-padding:5px 15px;
-border-radius:20px;
-}
-
-.aluno-card{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px;
-margin:10px 0;
-border-radius:15px;
-background:#fafafa;
-}
-
-.aluno-info{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.aluno-info img{
-width:60px;
-height:60px;
-border-radius:50%;
-object-fit:cover;
-}
-
-.status-dot{
-width:12px;
-height:12px;
-border-radius:50%;
-position:absolute;
-bottom:5px;
-right:5px;
-}
-
-.presente-btn{
-background:#22c55e;
-color:#fff;
-border:none;
-padding:8px 20px;
-border-radius:20px;
-}
-
-.ausente-btn{
-background:#ef4444;
-color:#fff;
-border:none;
-padding:8px 20px;
-border-radius:20px;
-}
-
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.5);
 justify-content:center;
+
 align-items:center;
+
+height:100vh;
+
 }
 
-.modal-content{
-background:#fff;
-padding:30px;
-border-radius:15px;
-width:300px;
-display:flex;
-flex-direction:column;
-gap:10px;
-}
-/* RELATORIOS */
+/* caixa login */
 
-.relatorio-container{
-width:85%;
-margin:30px auto;
-background:#fff;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+.login-container{
+
+background:rgba(255,255,255,0.95);
+
+padding:40px;
+
+border-radius:12px;
+
+width:320px;
+
+text-align:center;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+
 }
 
-.filtros{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-margin-bottom:30px;
-align-items:end;
+/* campos */
+
+input{
+
+width:100%;
+
+padding:12px;
+
+margin-top:15px;
+
+border-radius:6px;
+
+border:1px solid #ccc;
+
+font-size:14px;
+
 }
 
-.filtros input,
-.filtros select{
-padding:10px;
-border-radius:10px;
-border:1px solid #ddd;
+/* caixa senha */
+
+.senha-box{
+
+position:relative;
+
 }
 
-.filtros button{
-background:#6b21a8;
-color:#fff;
-border:none;
-padding:10px 20px;
-border-radius:20px;
+/* botão olho */
+
+.ver-senha{
+
+position:absolute;
+
+right:10px;
+
+top:18px;
+
 cursor:pointer;
+
 }
 
-.resultado-relatorio{
+/* botão login */
+
+button{
+
+width:100%;
+
+padding:12px;
+
 margin-top:20px;
+
+background:#2c7be5;
+
+color:white;
+
+border:none;
+
+border-radius:6px;
+
+font-size:16px;
+
+cursor:pointer;
+
 }
 
-.card-relatorio{
-background:#fafafa;
-padding:20px;
-border-radius:15px;
-margin-bottom:15px;
-}
-<style>
-.btn-login {
-  position: relative;
-  padding: 12px 20px;
-  background: #6a0dad;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
+button:hover{
+
+background:#1a68d1;
+
 }
 
-.spinner {
-  display: none;
-  width: 18px;
-  height: 18px;
-  border: 3px solid white;
-  border-top: 3px solid transparent;
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-  margin: auto;
-}
-.login-body {
-  margin: 0;
-  height: 100vh;
+/* esqueceu senha */
 
-  background-image: url("../img/fundo.jpg"); /* caminho da imagem */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.esqueci{
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.spinner {
-  width: 18px;
-  height: 18px;
-  border: 3px solid white;
-  border-top: 3px solid transparent;
-  border-radius: 50%;
-  display: inline-block;
-  animation: spin 0.7s linear infinite;
-  margin-left: 10px;
+display:block;
+
+margin-top:15px;
+
+color:#2c7be5;
+
+text-decoration:none;
+
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
+/* erro */
 
-.password-group {
-  position: relative;
-}
+#erroLogin{
 
-.eye {
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  cursor: pointer;
-}
+color:red;
 
-@keyframes spin {
-  100% { transform: rotate(360deg); }
+margin-top:10px;
+
+font-size:14px;
+
 }
-</style>
