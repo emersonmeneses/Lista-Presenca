@@ -213,4 +213,50 @@ height:100vh;
 background-size:cover;
 background-position:center;
 }
+/* caixa da senha */
+
+.password-box{
+
+position:relative;
+width:100%;
+
+}
+
+
+/* icone olho */
+
+.password-box i{
+
+position:absolute;
+
+right:12px;
+top:50%;
+
+transform:translateY(-50%);
+
+cursor:pointer;
+color:#555;
+
+}
+
+
+/* inputs */
+
+.login-container input{
+
+width:100%;
+height:45px;
+
+padding:0 40px 0 12px;
+
+border-radius:6px;
+border:1px solid #ccc;
+
+font-size:14px;
+
+box-sizing:border-box;
+
+margin-bottom:15px;
+
+}
 
