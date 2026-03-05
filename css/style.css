@@ -305,7 +305,7 @@ margin-top:10px;
 font-size:14px;
 }
 
-
+/* ===== ajsute tela do celular LOGIN ===== */
 @media (max-width: 600px){
 
 .login-container{
@@ -335,6 +335,19 @@ body{
 background-size: contain;
 background-repeat: no-repeat;
 background-position: center bottom;
+}
+
+}
+@media (max-width: 600px){
+
+body{
+
+background-size: cover;
+
+background-position: bottom center;
+
+background-repeat: no-repeat;
+
 }
 
 }
