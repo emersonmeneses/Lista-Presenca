@@ -22,20 +22,13 @@ height:100vh;
 
 /* caixa login */
 
-.login-container{
-
-background:rgba(255,255,255,0.95);
-
-padding:40px;
-
-border-radius:12px;
-
-width:320px;
-
-text-align:center;
-
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
-
+.login-container input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border-radius:6px;
+border:1px solid #ccc;
+box-sizing:border-box;
 }
 
 /* campos */
@@ -133,11 +126,4 @@ margin-top:10px;
 font-size:14px;
 
 }
-.login-container input{
-width:100%;
-padding:12px;
-margin-bottom:15px;
-border-radius:6px;
-border:1px solid #ccc;
-box-sizing:border-box;
-}
+
