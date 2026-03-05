@@ -299,3 +299,25 @@ margin-top:10px;
 font-size:14px;
 
 }
+#erroLogin{
+color:red;
+margin-top:10px;
+font-size:14px;
+}
+
+
+/* AJUSTE PARA CELULAR */
+
+@media (max-width: 600px){
+
+.login-container{
+width:90%;
+padding:25px;
+}
+
+body{
+align-items:flex-start;
+padding-top:60px;
+}
+
+}
