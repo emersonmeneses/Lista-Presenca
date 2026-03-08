@@ -1,7 +1,14 @@
-firebase.auth().onAuthStateChanged(function(user){
+import {auth} from "./firebase-config.js"
+
+import {onAuthStateChanged} from
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"
+
+onAuthStateChanged(auth,(user)=>{
 
 if(!user){
-window.location.href = "index.html"
+
+window.location="login.html"
+
 }
 
 })

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Painel do Professor</title>
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<script type="module" src="js/auth-check.js"></script>
+<script type="module" src="js/dashboard.js"></script>
+<script type="module" src="js/alunos.js"></script>
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div class="menu-icon" onclick="abrirMenu()">☰</div>
+
+<h2>Lista de Presença</h2>
+
+</header>
+
+
+<nav id="menuLateral" class="menu-lateral">
+
+<button onclick="abrirCadastro()">Cadastrar Aluno</button>
+
+<button onclick="editarAluno()">Editar Aluno</button>
+
+<button onclick="window.location='relatorios.html'">
+Relatórios
+</button>
+
+<button onclick="logout()">Sair</button>
+
+</nav>
+
+
+<section class="perfil-professor">
+
+<label for="fotoProfessor">
+
+<img id="fotoProfessorPreview"
+src="assets/img/default-user.png"
+class="foto-professor">
+
+<input type="file" id="fotoProfessor" hidden>
+
+</label>
+
+<div class="info-professor">
+
+<input type="text" id="nomeProfessor" placeholder="Nome do professor">
+
+<input type="text" id="turma" placeholder="Turma">
+
+<input type="text" id="ano" placeholder="Ano">
+
+<button onclick="salvarProfessor()">Salvar</button>
+
+</div>
+
+</section>
+
+
+<section class="cadastro-aluno" id="formAluno">
+
+<h3>Cadastrar Aluno</h3>
+
+<input type="text" id="nomeAluno" placeholder="Nome do aluno">
+
+<input type="date" id="nascimento">
+
+<select id="sexo">
+
+<option value="">Sexo</option>
+<option>Masculino</option>
+<option>Feminino</option>
+
+</select>
+
+<input type="text" id="responsavel" placeholder="Responsável">
+
+<input type="file" id="fotoAluno">
+
+<textarea id="observacaoAluno"
+placeholder="Observações"></textarea>
+
+<button onclick="cadastrarAluno()">Salvar aluno</button>
+
+</section>
+
+
+<section class="lista-alunos" id="listaAlunos">
+
+</section>
+
+</body>
+</html>
